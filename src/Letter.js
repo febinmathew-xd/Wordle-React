@@ -3,18 +3,33 @@ import { AppContext } from './App'
 
 
 function Letter({letterPos, attemptVal}) {
-    const {board, correctWord, disabledLetters, setDisabledLetters, currAttempt} = useContext(AppContext);
+    const {board, 
+      correctWord, 
+      disabledLetters, 
+      setDisabledLetters, 
+      currAttempt, 
+      setGreenKeys, 
+      setYellowKeys, 
+      greenKeys, 
+      yellowKeys
+    } = useContext(AppContext);
     const letter = board[attemptVal][letterPos];
     const correct = correctWord.toUpperCase()[letterPos] === letter;
     const almost = !correct && letter !== "" && correctWord.toUpperCase().includes(letter);
     const letterState = currAttempt.attempt >  attemptVal && (correct ? "correct" : almost ? "almost" : "error" );
-    console.log(correctWord)
+    
 
 
     useEffect(() => {
 
         if (letter !== "" && !correct && !almost){
             setDisabledLetters((prev) => [...prev, letter]);
+        }
+        if (letter!=="" && correct) {
+            setGreenKeys((prev) => [...prev, letter]);
+        }
+        if (letter !== "" && almost) {
+          setYellowKeys((prev) => [...prev, letter]);
         }
 
 

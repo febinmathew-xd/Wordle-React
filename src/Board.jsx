@@ -1,10 +1,11 @@
 import React from 'react'
 import Letter from './Letter'
+import ErrBox from './wrappers/ErrBox'
 
 function Board() {
   return (
-    <div className='board w-[350px] mx-auto h-[420px] border border-white/30 '>
-      {" "}
+    <div className='board w-[350px] mx-auto h-[420px] border border-white/30'>
+      
       <div className='row flex'>
         <Letter letterPos={0} attemptVal={0}/>
         <Letter letterPos={1} attemptVal={0}/>

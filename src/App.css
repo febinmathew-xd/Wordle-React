@@ -10,3 +10,17 @@
 #error {
     background-color: #52525b;
 }
+
+
+#disabled {
+    background-color: #52525b;
+
+}
+
+#green {
+    background-color: #15803d;
+}
+
+#yellow {
+    background-color: #ca8a04;
+}

@@ -1,9 +1,11 @@
 import React, { useContext } from 'react'
 import { AppContext } from './App';
 
-function Key({keyVal}) {
+function Key({keyVal, disabled, green, yellow}) {
 
     const {gameOver, onSelectLetter} = useContext(AppContext);
+    const letterState =( disabled ? "disabled" : green ? "green" : yellow ? "yellow" : "");
+
 
     const selectLetter = () => {
           if (gameOver.gameOver ) return;
@@ -13,8 +15,10 @@ function Key({keyVal}) {
 
     };
   return (
-    <div className='w-[60px] h-[65px] border border-white/20 mx-2 flex justify-center items-center text-white/80 font-serif text-xl rounded hover:bg-slate-700/20 hover:white/30 hover:text-white/90 select-none active:scale-105 transition-all ease-out'
-    onClick={selectLetter}> 
+    <div className='w-[60px] h-[65px] border border-white/20 mx-2 flex  justify-center items-center text-white/80 font-serif text-xl rounded hover:bg-slate-700/20 hover:white/30 hover:text-white/90 select-none active:scale-105 transition-all ease-out'
+    onClick={selectLetter} 
+    id={letterState}
+    > 
     {keyVal}
     </div>
   )
