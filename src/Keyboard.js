@@ -15,28 +15,28 @@ function Keyboard() {
 
   
   return (
-    <div className='keyboard w-[600px] mx-auto mt-4 cursor-pointer'>
+    <div className='keyboard min-w-[300px] sm:w-[470px] md:w-[600px] mx-auto mt-8 cursor-pointer'>
       <div className='line1 flex'>
         {keys1.map((key)=> {
-          return <Key keyVal={key} 
+          return <Key key={key} keyVal={key} 
           disabled ={disabledLetters.includes(key)}
           green = {greenKeys.includes(key)}
           yellow = {yellowKeys.includes(key)}
           />
         })}
       </div>
-      <div className='line2 flex px-8 mt-4 cursor-pointer'>
+      <div className='line2 flex px-8 mt-6 md:mt-4 cursor-pointer'>
         {keys2.map((key)=> {
-          return <Key keyVal={key} disabled ={disabledLetters.includes(key)}
+          return <Key key={key} keyVal={key} disabled ={disabledLetters.includes(key)}
           green = {greenKeys.includes(key)}
           yellow = {yellowKeys.includes(key)}
           />
         })}
       </div>
-      <div className='line3 flex px-6 mt-4 cursor-pointer'>
+      <div className='line3 flex px-6 mt-6 md:mt-4 cursor-pointer'>
         <BigKey keyVal={"ENTER"}/>
         {keys3.map((key)=> {
-          return <Key keyVal={key} disabled ={disabledLetters.includes(key)}
+          return <Key key={key} keyVal={key} disabled ={disabledLetters.includes(key)}
           green = {greenKeys.includes(key)}
           yellow = {yellowKeys.includes(key)}
           />

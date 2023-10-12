@@ -75,8 +75,7 @@ function App() {
       setErr(true);
       setErrMsg("Not in the List");
     }
-    console.log('correct word:', correctWord);
-    console.log('current word:', currWord);
+    
     if(currWord.toLowerCase() === correctWord){
       setGameOver({gameOver:true, gussedWord:true});
       setErr(true);
@@ -91,7 +90,7 @@ function App() {
       return;
     }
 
-    console.log(gameOver)
+    
 
   
     
@@ -100,7 +99,7 @@ function App() {
 
 
   return (
-    <div className="App relative">
+    <div className="App overflow-hidden relative">
       <AppContext.Provider value={{
         board, 
         setBoard, 
@@ -123,7 +122,7 @@ function App() {
         errMsg,
         setErrMsg}}>
       <Header>
-        <Title/>
+        <Title title="Wordle"/>
       </Header>
       <Main>
         {err && <ErrBox errMsg={errMsg} />}

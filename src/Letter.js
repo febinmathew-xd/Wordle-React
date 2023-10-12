@@ -18,6 +18,7 @@ function Letter({letterPos, attemptVal}) {
     const almost = !correct && letter !== "" && correctWord.toUpperCase().includes(letter);
     const letterState = currAttempt.attempt >  attemptVal && (correct ? "correct" : almost ? "almost" : "error" );
     
+    
 
 
     useEffect(() => {
@@ -38,7 +39,7 @@ function Letter({letterPos, attemptVal}) {
 
     
   return (
-    <div className='letter w-[70px] h-[70px] m-auto  flex justify-center items-center  border-[0.1px] border-gray-300/20 text-white/60  text-4xl select-none  font-serif' id={letterState} >
+    <div className='letter w-[65px] h-[65px] m-auto  flex justify-center items-center  border-[0.1px] border-gray-300/20 text-white/60  text-4xl select-none  font-serif' id={letterState.toString()} >
         <div className=''>{letter}</div>
     </div>
   );
