@@ -4,7 +4,7 @@ import ErrBox from './wrappers/ErrBox'
 
 function Board() {
   return (
-    <div className='board w-[325px] mx-auto h-[390px] border mt-4 border-white/30'>
+    <div className='board w-[325px] mx-auto h-[390px] border mt-4 border-slate-900'>
       
       <div className='row flex'>
         <Letter letterPos={0} attemptVal={0}/>

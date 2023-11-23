@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AppContext } from '../App'
 
-function Main({children}) {
+function Main({children, headertheme}) {
+
+  
+  
   return (
-    <div className='main  w-full h-[calc(100vh-48px)] px-4 pt-2 bg-gray-900'>
+    <div className={`main ${headertheme} w-full h-[calc(100vh-48px)] px-4 pt-2`}>
         {children}
     </div>
   )

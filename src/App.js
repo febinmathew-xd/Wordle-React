@@ -9,6 +9,8 @@ import Main from "./wrappers/Main";
 import { generateWordSet } from "./Utilities";
 import "./App.css";
 import ErrBox from "./wrappers/ErrBox";
+import ThemeBox from "./wrappers/ThemeBox";
+
 
 
 
@@ -27,6 +29,7 @@ function App() {
   const [yellowKeys, setYellowKeys] = useState([]);
   const [err, setErr] = useState(false);
   const [errMsg, setErrMsg] = useState('');
+  const [headerTheme, setHeaderTheme] = useState("themeDefaultHeader");
   
 
   useEffect(() => {
@@ -99,7 +102,7 @@ function App() {
 
 
   return (
-    <div className="App overflow-hidden relative">
+    <div className="App  relative">
       <AppContext.Provider value={{
         board, 
         setBoard, 
@@ -120,14 +123,17 @@ function App() {
         err,
         setErr,
         errMsg,
-        setErrMsg}}>
+        setErrMsg,
+        headerTheme,
+        setHeaderTheme}}>
       <Header>
         <Title title="Wordle"/>
       </Header>
-      <Main>
+      <Main headertheme={headerTheme}>
+      
         {err && <ErrBox errMsg={errMsg} />}
         
-        
+        <ThemeBox/>
         <Board/>
         <Keyboard/>
       </Main>

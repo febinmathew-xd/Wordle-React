@@ -24,3 +24,13 @@
 #yellow {
     background-color: #ca8a04;
 }
+
+
+.themeDefaultHeader {
+    background-color: #141727 ;
+    opacity: .95;
+}
+
+#redHeader {
+    background-color: red;
+}

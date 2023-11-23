@@ -39,7 +39,7 @@ function Letter({letterPos, attemptVal}) {
 
     
   return (
-    <div className='letter w-[65px] h-[65px] m-auto  flex justify-center items-center  border-[0.1px] border-gray-300/20 text-white/60  text-4xl select-none  font-serif' id={letterState.toString()} >
+    <div className='letter w-[65px] h-[65px] m-auto  flex justify-center items-center  border-[0.1px] border-slate-900/40 text-white/60  text-4xl select-none  font-serif' id={letterState.toString()} >
         <div className=''>{letter}</div>
     </div>
   );
