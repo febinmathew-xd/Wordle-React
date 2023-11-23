@@ -24,3 +24,45 @@ export const generateWordSet = async () => {
     });
     return {wordSet, todaysWord};
 }
+
+
+export const Theme = [
+    {
+        name:"red",
+        primary: "",
+        secondary: "",
+        thirtiary: "",
+    },
+    {
+        name:"violet",
+        primary: "",
+        secondary: "",
+        thirtiary: "",
+    },
+    {
+        name:"green",
+        primary: "",
+        secondary: "",
+        thirtiary: "",
+    },
+    {
+        name:"red",
+        primary: "",
+        secondary: "",
+        thirtiary: "",
+    },
+    {
+        name:"red",
+        primary: "",
+        secondary: "",
+        thirtiary: "",
+    },
+    {
+        name:"red",
+        primary: "",
+        secondary: "",
+        thirtiary: "",
+    },
+
+
+]

@@ -30,12 +30,14 @@ function App() {
   const [err, setErr] = useState(false);
   const [errMsg, setErrMsg] = useState('');
   const [headerTheme, setHeaderTheme] = useState("themeDefaultHeader");
+  const [flipAnimation, setFlipAnimation] = useState(false);
   
 
   useEffect(() => {
        generateWordSet().then((words)=> {
         setWordSet(words.wordSet);
         setCorrectWord(words.todaysWord);
+        
         
        })
 
@@ -70,9 +72,15 @@ function App() {
       currWord += board[currAttempt.attempt][i]
 
     }
-    console.log(currWord)
+   
     if (wordSet.has(currWord.toLowerCase())){
-      setCurrAttempt({attempt:currAttempt.attempt+1, letter:0})
+      setFlipAnimation(true);
+      
+      
+      setTimeout(() => {
+        setCurrAttempt({attempt:currAttempt.attempt+1, letter:0})
+        setFlipAnimation(false);
+      },450);
     }
     else{
       setErr(true);
@@ -81,15 +89,22 @@ function App() {
     
     if(currWord.toLowerCase() === correctWord){
       setGameOver({gameOver:true, gussedWord:true});
-      setErr(true);
-      setErrMsg('Love you for 10000 years');
+      
+      setTimeout(() => {
+        setErrMsg('Love you for 10000 years'); 
+        setErr(true);
+      }, 2000);
+      
       return;
     }
     console.log(currAttempt);
-    if (currAttempt.attempt === 5){
+    if (currAttempt.attempt === 6){
       setGameOver({gameOver:true, gussedWord:false});
-      setErr(true);
-      setErrMsg("Game Over");
+      setTimeout(() => {
+        setErr(true);
+        setErrMsg("Game Over");
+      }, 2000);
+      
       return;
     }
 
@@ -125,15 +140,16 @@ function App() {
         errMsg,
         setErrMsg,
         headerTheme,
-        setHeaderTheme}}>
+        setHeaderTheme,
+        flipAnimation}}>
       <Header>
         <Title title="Wordle"/>
       </Header>
       <Main headertheme={headerTheme}>
       
-        {err && <ErrBox errMsg={errMsg} />}
+        {err && <ErrBox errMsg={errMsg} timeout={1800} />}
         
-        <ThemeBox/>
+        
         <Board/>
         <Keyboard/>
       </Main>

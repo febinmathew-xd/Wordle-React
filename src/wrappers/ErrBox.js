@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { AppContext } from '../App'
 
-function ErrBox({errMsg}) {
+function ErrBox({errMsg, timeout}) {
 
     const {setErr, setErrMsg} = useContext(AppContext);
     
@@ -10,7 +10,7 @@ function ErrBox({errMsg}) {
         setTimeout(() => {
         setErr(false);
         setErrMsg('');
-        }, 1200);
+        }, timeout);
     });
 
     

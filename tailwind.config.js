@@ -6,6 +6,14 @@ module.exports = {
   presets: [],
   darkMode: "class",
   theme: {
+    extend: {
+      keyframes :{
+        flip: {
+          "0%, 100%" : {transform: 'rotateX(0)'},
+          "45%, 55%" : {transform: 'rotateX(90deg)'}
+        }
+      }
+    },
     screens: {
       sm: "576px",
       "sm-max": { max: "576px" },

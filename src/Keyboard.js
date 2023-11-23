@@ -15,7 +15,7 @@ function Keyboard() {
 
   
   return (
-    <div className='keyboard min-w-[300px] sm:w-[470px] md:w-[600px] mx-auto mt-8 cursor-pointer'>
+    <div className='keyboard no-tap-highlight min-w-[300px] sm:w-[470px] md:w-[600px] mx-auto mt-8 cursor-pointer'>
       <div className='line1 flex'>
         {keys1.map((key)=> {
           return <Key key={key} keyVal={key} 

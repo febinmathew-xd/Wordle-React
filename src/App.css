@@ -1,3 +1,10 @@
+
+
+.no-tap-highlight {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+    user-select: none; 
+  }
+  
 #correct {
     background-color: #15803d;
     
